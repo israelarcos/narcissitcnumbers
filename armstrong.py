@@ -15,6 +15,7 @@ def is_armstrong(n):
     if n < 0:
         return False
     
+    aux_num = n
     suma = 0
     digits = count_digit(n)
     
@@ -23,14 +24,15 @@ def is_armstrong(n):
         suma += r**digits
         n //= 10
         
-    return suma == n
+    return suma == aux_num
 
 
 def narcissistic_function(x, b):
+    y = x
     num_digits = 0
-    while x > 0:
+    while y > 0:
         num_digits += 1
-        x = x // b
+        y = y // b
     total = 0
     while x > 0:
         total += pow(x % b, num_digits)
